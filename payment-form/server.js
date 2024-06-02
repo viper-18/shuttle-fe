@@ -18,7 +18,7 @@ app.post('/submit', async (req, res) => {
     console.log('Request Data:', requestData);
 
     try {
-        const response = await axios.post('http://golang-backend:3000/payment', requestData);
+        const response = await axios.post('http://go-backend-service:3000/payment', requestData);
         res.json(response.data);
     } catch (error) {
         console.error('Error:', error.message);
