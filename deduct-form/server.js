@@ -4,7 +4,7 @@ const axios = require('axios');
 const path = require('path');
 
 const app = express();
-const PORT = 3001;  // Use a different port
+const PORT = 3000;  // Use a different port
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -18,7 +18,7 @@ app.post('/deduct', async (req, res) => {
     console.log('Request Data:', requestData);
 
     try {
-        const response = await axios.post('http://75.101.214.186/deduct', requestData);
+        const response = await axios.post('http://golang-backend:3000/deduct', requestData);
         res.json(response.data);
     } catch (error) {
         console.error('Error:', error.message);
@@ -38,5 +38,5 @@ app.post('/deduct', async (req, res) => {
 });
 
 app.listen(PORT, () => {
-    console.log(`Server is running on http://localhost:${PORT}`);
+    console.log(`Server is running on ${PORT}`);
 });
